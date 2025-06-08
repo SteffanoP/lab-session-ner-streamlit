@@ -1,3 +1,8 @@
+# Debug for Streamlit app to run
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 import streamlit as st
 import os
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, GoogleGenerativeAI
